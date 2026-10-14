@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meltora | Cheddar &amp; Mozzarella Cheese in Karachi</title>
+  <meta name="description" content="Meltora offers cheddar and mozzarella cheese for pizza nights, burgers, sandwiches and homemade recipes. Order via WhatsApp in selected areas of Karachi.">
+  <!-- REPLACE before publishing: put your real live address below -->
+  <link rel="canonical" href="https://YOUR-SITE.pages.dev/">
+  <meta name="theme-color" content="#1F4D36">
+
+  <!-- Open Graph (REPLACE og:url and og:image once your site is live) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Meltora">
+  <meta property="og:title" content="Meltora | Melt Into Happiness.">
+  <meta property="og:description" content="Cheddar and mozzarella cheese for pizza nights, burgers, sandwiches and homemade recipes. Selected areas of Karachi.">
+  <meta property="og:url" content="https://YOUR-SITE.pages.dev/">
+  <meta property="og:image" content="https://YOUR-SITE.pages.dev/assets/images/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#shop" data-i18n="skip">Skip to products</a>
+
+  <!-- A. ANNOUNCEMENT BAR -->
+  <div id="announcement" class="announcement" role="note" hidden>
+    <p id="announcementText"></p>
+  </div>
+
+  <!-- B. NAVIGATION -->
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="logo" href="#home" aria-label="Meltora home">
+        <!-- Easy to replace: delete the two <span> lines and put <img src="assets/logo.svg" alt="Meltora"> here -->
+        <span class="logo-mark" aria-hidden="true">M</span>
+        <span class="logo-text">Meltora</span>
+      </a>
+
+      <nav id="mainNav" class="main-nav" aria-label="Main">
+        <a href="#home" data-i18n="nav_home">Home</a>
+        <a href="#shop" data-i18n="nav_shop">Shop</a>
+        <a href="#about" data-i18n="nav_about">About Us</a>
+        <a href="#delivery" data-i18n="nav_delivery">Delivery Information</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="langToggle" class="btn btn-ghost btn-small" type="button" aria-label="Switch language">اردو</button>
+        <button id="cartButton" class="icon-btn cart-btn" type="button" aria-label="Open cart" aria-haspopup="dialog">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM3 2v2h2l3.6 7.6-1.4 2.4A2 2 0 0 0 9 17h11v-2H9.4l1.1-2h7.5a2 2 0 0 0 1.7-1l3.6-6.5A1 1 0 0 0 22.4 4H6.2l-.9-2H3Z"/></svg>
+          <span id="cartCount" class="cart-count" aria-live="polite">0</span>
+        </button>
+        <button id="menuToggle" class="icon-btn menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- C. HERO -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="hero_eyebrow">Melt Into Happiness.</p>
+          <h1 data-i18n="hero_title">Bring More Cheese to Every Bite.</h1>
+          <p class="lead" data-i18n="hero_text">Discover cheddar and mozzarella for pizza nights, burgers, sandwiches and your favourite homemade recipes.</p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="#shop" data-i18n="hero_cta1">Shop Cheese</a>
+            <a class="btn btn-outline" href="#categories" data-i18n="hero_cta2">Explore Products</a>
+          </div>
+          <p class="hero-note" data-i18n="hero_note">Orders are placed through WhatsApp.</p>
+        </div>
+        <div class="hero-visual" id="heroVisual">
+          <div class="img-fallback" aria-hidden="true"><span>🧀</span></div>
+          <img id="heroImg" src="assets/images/hero.jpg" alt="Melted cheese on a freshly baked pizza" width="800" height="700" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <!-- D. CATEGORIES -->
+    <section id="categories" class="section">
+      <div class="container">
+        <h2 class="section-title" data-i18n="cat_title">Shop by Category</h2>
+        <div id="categoryGrid" class="category-grid"></div>
+      </div>
+    </section>
+
+    <!-- E. PRODUCTS -->
+    <section id="shop" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title" data-i18n="shop_title">Our Cheese</h2>
+        <div id="filterBar" class="filter-bar" role="group" aria-label="Filter products"></div>
+        <div id="productGrid" class="product-grid" aria-live="polite"></div>
+        <p id="shopEmpty" class="muted center" hidden data-i18n="shop_empty">No products to show right now.</p>
+        <p class="muted center small" data-i18n="shop_note">Prices are in Pakistani Rupees (Rs.). Please check the product label for full details.</p>
+      </div>
+    </section>
+
+    <!-- K. ABOUT -->
+    <section id="about" class="section">
+      <div class="container narrow">
+        <h2 class="section-title" data-i18n="about_title">About Meltora</h2>
+        <p data-i18n="about_p1">Meltora is a cheese brand created for people who love good food at home. We offer cheddar and mozzarella in practical pack sizes for pizza nights, burgers, sandwiches and everyday cooking.</p>
+        <p data-i18n="about_p2">We are just getting started in Karachi, and we keep ordering simple: choose your cheese, send your order on WhatsApp and our team will confirm the details with you personally.</p>
+      </div>
+    </section>
+
+    <!-- J. DELIVERY -->
+    <section id="delivery" class="section section-alt">
+      <div class="container narrow">
+        <h2 class="section-title" data-i18n="del_title">Delivery Information</h2>
+        <ul class="info-list">
+          <li><strong data-i18n="del_area_h">Service area</strong><span data-i18n="del_area_t">Selected areas of Karachi.</span></li>
+          <li><strong data-i18n="del_fee_h">Delivery fee</strong><span id="delFee"></span></li>
+          <li id="delMinRow" hidden><strong data-i18n="del_min_h">Minimum order</strong><span id="delMin"></span></li>
+          <li><strong data-i18n="del_time_h">Delivery timing</strong><span id="delTiming"></span></li>
+          <li><strong data-i18n="del_handling_h">Handling</strong><span id="delHandling"></span></li>
+          <li><strong data-i18n="del_confirm_h">Is my area covered?</strong><span data-i18n="del_confirm_t">Choose your area at checkout. If it is not listed, message us on WhatsApp and we will tell you whether we can deliver to you.</span></li>
+        </ul>
+        <h3 class="mini-title" data-i18n="del_areas_h">Areas we currently list</h3>
+        <ul id="areaChips" class="chips"></ul>
+      </div>
+    </section>
+
+    <!-- L. FAQ -->
+    <section id="faq" class="section">
+      <div class="container narrow">
+        <h2 class="section-title" data-i18n="faq_title">Frequently Asked Questions</h2>
+        <details class="faq"><summary data-i18n="faq1_q">What is the difference between cheddar and mozzarella?</summary><p data-i18n="faq1_a">Cheddar is a firm cheese with a fuller, sharper flavour that suits burgers, sandwiches and grating. Mozzarella is milder and is known for stretching when melted, which is why it is popular on pizza and in baked pasta.</p></details>
+        <details class="faq"><summary data-i18n="faq2_q">Which cheese is suitable for pizza?</summary><p data-i18n="faq2_a">Mozzarella is the classic choice for pizza because it melts and stretches well. Many people also blend in a little cheddar for extra flavour.</p></details>
+        <details class="faq"><summary data-i18n="faq3_q">How can I place an order?</summary><p data-i18n="faq3_a">Add products to your cart, tap Proceed to Checkout, fill in your delivery details and send the prepared message on WhatsApp. Your order is confirmed only after our team replies.</p></details>
+        <details class="faq"><summary data-i18n="faq4_q">Which areas do you deliver to?</summary><p data-i18n="faq4_a">We currently deliver to selected areas of Karachi. See the Delivery Information section for the areas we list, or message us on WhatsApp to check yours.</p></details>
+        <details class="faq"><summary data-i18n="faq5_q">What payment methods are available?</summary><p id="faq5Answer"></p></details>
+        <details class="faq"><summary data-i18n="faq6_q">How should I store my cheese?</summary><p data-i18n="faq6_a">Please follow the storage instructions printed on the product label. Cheese is generally kept refrigerated, but the label is the final guide for your pack.</p></details>
+        <details class="faq"><summary data-i18n="faq7_q">How can I contact customer support?</summary><p data-i18n="faq7_a">Message us on WhatsApp using the button on this page and our team will help you.</p></details>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section-alt">
+      <div class="container narrow center">
+        <h2 class="section-title" data-i18n="contact_title">Contact Us</h2>
+        <p data-i18n="contact_text">Questions about products or delivery? Message us on WhatsApp.</p>
+        <p><button type="button" class="btn btn-whatsapp" data-action="whatsapp-contact" data-i18n="whatsapp_btn">Chat on WhatsApp</button></p>
+        <ul id="contactList" class="contact-list"></ul>
+      </div>
+    </section>
+
+    <!-- Privacy and Terms -->
+    <section id="legal" class="section">
+      <div class="container narrow">
+        <h2 id="privacy" class="mini-title" data-i18n="privacy_title">Privacy Notice</h2>
+        <p class="small" data-i18n="privacy_text">This website does not send your details to any server. Your cart and language choice are saved only in your own browser. When you check out, the details you type are placed into a WhatsApp message that you review and send yourself. We use them only to process your order.</p>
+        <h2 id="terms" class="mini-title" data-i18n="terms_title">Terms and Conditions</h2>
+        <p class="small" data-i18n="terms_text">Orders sent through this website are requests only. An order is confirmed after our team verifies product availability, delivery charges and delivery timing. Prices and availability may change. [Add your own return, refund and cancellation policy here.]</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- M. FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="logo logo-light" href="#home" aria-label="Meltora home">
+          <span class="logo-mark" aria-hidden="true">M</span>
+          <span class="logo-text">Meltora</span>
+        </a>
+        <p class="footer-tag" id="footerTagline"></p>
+        <p><button type="button" class="btn btn-whatsapp btn-small" data-action="whatsapp-contact" data-i18n="whatsapp_btn">Chat on WhatsApp</button></p>
+      </div>
+      <nav aria-label="Footer">
+        <h3 data-i18n="footer_links">Quick links</h3>
+        <ul class="footer-links">
+          <li><a href="#shop" data-i18n="nav_shop">Shop</a></li>
+          <li><a href="#about" data-i18n="nav_about">About Us</a></li>
+          <li><a href="#delivery" data-i18n="nav_delivery">Delivery Information</a></li>
+          <li><a href="#faq" data-i18n="faq_title_short">FAQ</a></li>
+          <li><a href="#privacy" data-i18n="privacy_title">Privacy Notice</a></li>
+          <li><a href="#terms" data-i18n="terms_title">Terms and Conditions</a></li>
+          <li id="footerInstagram" hidden><a id="footerInstagramLink" href="#" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h3 data-i18n="footer_delivery_h">Delivery</h3>
+        <p class="small" data-i18n="del_area_t">Selected areas of Karachi.</p>
+        <p class="small" data-i18n="footer_social_note" id="footerSocialNote"></p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p class="small">© <span id="year"></span> Meltora. <span data-i18n="rights">All rights reserved.</span></p>
+    </div>
+  </footer>
+
+  <!-- Mobile sticky cart shortcut -->
+  <button id="stickyCart" class="sticky-cart" type="button" hidden>
+    <span id="stickyCartLabel">View cart</span>
+    <strong id="stickyCartTotal"></strong>
+  </button>
+
+  <!-- CART + CHECKOUT DRAWER -->
+  <div id="overlay" class="overlay" hidden></div>
+  <aside id="drawer" class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" aria-hidden="true" tabindex="-1">
+    <div class="drawer-head">
+      <h2 id="drawerTitle">Your Cart</h2>
+      <button id="drawerClose" class="icon-btn" type="button" aria-label="Close">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12 19 6.4 17.6 5 12 10.6 6.4 5Z"/></svg>
+      </button>
+    </div>
+
+    <div class="drawer-body">
+      <!-- Cart view -->
+      <div id="cartView">
+        <div id="cartEmpty" class="empty-state" hidden>
+          <p class="empty-emoji" aria-hidden="true">🧀</p>
+          <p id="cartEmptyText"></p>
+          <button id="cartEmptyBtn" type="button" class="btn btn-primary"></button>
+        </div>
+        <div id="cartFilled" hidden>
+          <ul id="cartItems" class="cart-items"></ul>
+          <div id="cartNotices" class="notices"></div>
+          <dl class="totals">
+            <div><dt id="lblSubtotal"></dt><dd id="valSubtotal"></dd></div>
+            <div><dt id="lblDelivery"></dt><dd id="valDelivery"></dd></div>
+            <div class="grand"><dt id="lblTotal"></dt><dd id="valTotal"></dd></div>
+          </dl>
+          <p id="cartWhatsappNote" class="notice-box"></p>
+          <button id="checkoutBtn" type="button" class="btn btn-primary btn-block"></button>
+        </div>
+      </div>
+
+      <!-- Checkout view -->
+      <form id="checkoutForm" novalidate hidden>
+        <button id="backToCart" type="button" class="link-btn"></button>
+        <p id="configWarning" class="warning-box" role="alert" hidden></p>
+
+        <div class="field">
+          <label for="custName" id="lblName"></label>
+          <input id="custName" name="name" type="text" autocomplete="name" maxlength="80" required>
+          <p class="error" id="errName" role="alert"></p>
+        </div>
+        <div class="field">
+          <label for="custPhone" id="lblPhone"></label>
+          <input id="custPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" dir="ltr" placeholder="03XX XXXXXXX" required>
+          <p class="error" id="errPhone" role="alert"></p>
+        </div>
+        <div class="field">
+          <label for="custArea" id="lblArea"></label>
+          <select id="custArea" name="area" required></select>
+          <p class="hint" id="hintArea"></p>
+          <p class="error" id="errArea" role="alert"></p>
+        </div>
+        <div class="field">
+          <label for="custAddress" id="lblAddress"></label>
+          <textarea id="custAddress" name="address" rows="3" maxlength="300" autocomplete="street-address" required></textarea>
+          <p class="error" id="errAddress" role="alert"></p>
+        </div>
+        <div class="field">
+          <label for="custNotes" id="lblNotes"></label>
+          <textarea id="custNotes" name="notes" rows="2" maxlength="200"></textarea>
+        </div>
+        <fieldset class="field">
+          <legend id="lblPayment"></legend>
+          <div id="paymentOptions"></div>
+          <p class="error" id="errPayment" role="alert"></p>
+        </fieldset>
+
+        <h3 id="summaryTitle" class="mini-title"></h3>
+        <ul id="summaryItems" class="summary-items"></ul>
+        <dl class="totals">
+          <div><dt id="slSubtotal"></dt><dd id="svSubtotal"></dd></div>
+          <div><dt id="slDelivery"></dt><dd id="svDelivery"></dd></div>
+          <div class="grand"><dt id="slTotal"></dt><dd id="svTotal"></dd></div>
+        </dl>
+        <p id="checkoutNotice" class="notice-box"></p>
+        <p id="formError" class="warning-box" role="alert" hidden></p>
+        <button id="sendOrderBtn" type="submit" class="btn btn-whatsapp btn-block"></button>
+      </form>
+
+      <!-- After WhatsApp opened -->
+      <div id="sentView" hidden>
+        <div class="notice-box">
+          <h3 id="sentTitle"></h3>
+          <p id="sentText"></p>
+          <p><strong id="sentRefLabel"></strong> <span id="sentRef" dir="ltr"></span></p>
+        </div>
+        <p id="sentFallback" class="small" hidden></p>
+        <p><a id="sentLink" class="btn btn-whatsapp btn-block" href="#" target="_blank" rel="noopener noreferrer"></a></p>
+        <button id="sentBack" type="button" class="btn btn-outline btn-block"></button>
+      </div>
+    </div>
+  </aside>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
